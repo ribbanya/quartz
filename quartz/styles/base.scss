@@ -93,20 +93,20 @@ a {
 
 .desktop-only {
   display: initial;
-  @media all and (max-width: $fullPageWidth) {
-    display: none;
-  }
+  /* @media all and (max-width: $fullPageWidth) { */
+  /*   display: none; */
+  /* } */
 }
 
 .mobile-only {
   display: none;
-  @media all and (max-width: $fullPageWidth) {
-    display: initial;
-  }
+  /* @media all and (max-width: $fullPageWidth) { */
+  /*   display: initial; */
+  /* } */
 }
 
 .page {
-  @media all and (max-width: $fullPageWidth) {
+  @media all and (max-width: 200px) {
     margin: 0 auto;
     padding: 0 1rem;
     max-width: $pageWidth;
@@ -142,7 +142,7 @@ a {
     width: 100%;
     display: flex;
     @media all and (max-width: $fullPageWidth) {
-      flex-direction: column;
+      flex-direction: row;
     }
 
     & .sidebar {
@@ -157,7 +157,7 @@ a {
       position: fixed;
       @media all and (max-width: $fullPageWidth) {
         position: initial;
-        flex-direction: row;
+        flex-direction: column;
         padding: 0;
         width: initial;
         margin-top: 2rem;
@@ -179,6 +179,7 @@ a {
       flex-wrap: wrap;
       & > * {
         @media all and (max-width: $fullPageWidth) {
+          display: none;
           flex: 1;
           min-width: 140px;
         }
@@ -201,7 +202,8 @@ a {
     margin-right: auto;
     width: $pageWidth;
     @media all and (max-width: $fullPageWidth) {
-      width: initial;
+      width: $fullPageWidth - $sidePanelWidth;
+      /* width: initial; */
       margin-left: 0;
       margin-right: 0;
     }
